@@ -1,39 +1,43 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# listview_library
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+A Flutter widget for ListView.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+### Features
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+* Support headers for each group.
+* All fields from `ListView.builder` constructor available.
 
-## Features
+## Getting Started
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+ Add the package to your pubspec.yaml:
 
-## Getting started
+ ```yaml
+ listview_library: ^1.1.1
+ ```
+ 
+ In your dart file, import the library:
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+ ```Dart
+import 'package:listview_library/listview_library.dart';
+ ``` 
+ 
+ Instead of using a `ListView` create a `GroupListView` Widget:
+ 
+ ``` final List<String> data = ['Item 1', 'Item 2', 'Item 3'];
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'My App',
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('My ListView'),
+        ),
+        body: MyListView(data: data),
+      ),
+    );
+  }
+}
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## Contributions
+Contributions of any kind are more than welcome! Feel free to fork and improve flutter_listview_library in any way you want, make a pull request, or open an issue.
